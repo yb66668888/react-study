@@ -1,25 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+// import Lifecycle from './components/lifecycle';
 
-function App() {
+import Heading from './Heading.js'
+import Section from './Section.js'
+
+export default function ProfilePage() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Section>
+      <Heading>My profile</Heading>
+      <Post title="My first post" body="This is my first post" />
+      <AllPosts />
+    </Section>
   );
 }
 
-export default App;
+function AllPosts() {
+  return (
+    <Section>
+      <Heading>帖子</Heading>
+      <RecentPosts />
+    </Section>
+  )
+}
+
+function RecentPosts() {
+  return (
+    <Section>
+      <Heading>最近的帖子</Heading>
+      <Post title="里斯本的味道" body="那些蛋挞..." />
+      <Post
+        title="探戈节奏中的布宜诺斯艾利斯"
+        body="我爱它！"
+      />
+    </Section>
+  )
+}
+
+function Post({ title, body }) {
+  return (
+    <Section isFancy={true}>
+      <Heading>{title}</Heading>
+      <p>
+        <i>{body}</i>
+      </p>
+    </Section>
+  )
+}
+
