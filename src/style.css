@@ -1,0 +1,19 @@
+.padding-inner-20 {
+  padding: 20px;
+}
+
+.button-css {
+  margin: 0 10px;
+}
+
+.li-css {
+  margin: 10px 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.width-300 {
+  width: 300px;
+}
